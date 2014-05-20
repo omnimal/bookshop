@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="comm030.model.User_role" 
+         table="USER_ROLES"
+         dynamic-insert="false" 
+         dynamic-update="false" 
+         mutable="true"
+         optimistic-lock="version"
+         polymorphism="implicit"
+         select-before-update="false">
+      <id name="user_role_id">
+          <generator class="increment"/>
+      </id>
+      <property name="user_id" column="user_id" not-null="true"/>
+      <property name="authority" column="authority" not-null="true"/>
+  </class>
+</hibernate-mapping>
