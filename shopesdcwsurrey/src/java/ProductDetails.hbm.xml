@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping schema="BOOKSHOP">
+   <class name="comm030.model.ProductDetails"
+          table="PRODUCTS"
+          dynamic-insert="false" 
+          dynamic-update="false" 
+          mutable="true"
+          optimistic-lock="version"
+          polymorphism="implicit"
+          select-before-update="false">
+       <id name="product_id"> 
+           <generator class="increment"/>
+       </id>
+       <property name="name" column="name" not-null="true"/>
+       <property name="price" column="price" not-null="true"/>
+       <property name="img_url" column="img_url" not-null="true"/>
+       <property name="stock" column="stock" not-null="true"/>
+       <property name="description" column="description" not-null="true"/>
+       <property name="category" column="category" not-null="true"/>
+   </class>
+</hibernate-mapping>
